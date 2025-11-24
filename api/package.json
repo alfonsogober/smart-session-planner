@@ -1,0 +1,50 @@
+{
+  "name": "api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "seed": "node prisma/seed.js",
+    "db:seed": "node prisma/seed.js",
+    "postinstall": "npx prisma generate && node -e \"const fs=require('fs');const path=require('path');const defaultJsPath=path.join(__dirname,'node_modules/.prisma/client/default.js');if(!fs.existsSync(defaultJsPath)){fs.writeFileSync(defaultJsPath,'const {PrismaClient}=require(\\\"./index.js\\\");module.exports={PrismaClient};');}\""
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "@types/ramda": "^0.31.1",
+    "@types/styled-components": "^5.1.36",
+    "better-sqlite3": "^12.4.6",
+    "date-fns": "^4.1.0",
+    "dotenv": "^17.2.3",
+    "next": "16.0.3",
+    "prisma": "^6.19.0",
+    "ramda": "^0.32.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "sqlite3": "^5.1.7",
+    "styled-components": "^6.1.19"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.19.25",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.3",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5"
+  }
+}
